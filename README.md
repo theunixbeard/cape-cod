@@ -7,12 +7,14 @@
 
 # Project Goals
 
+- Log all historical prices in the DB (quotes table ; fields include symbol, price, and holdings_value)
 - Alert the user via email when CURRENCY_SYMBOL rises above a certain price (TARGET_PRICE). It will check hourly
 - Display current CURRENCY_SYMBOL price on a webpage
 - Display current holdings value (HOLDINGS * current price)
 
 # Execution Plan
 
+0. Create the quotes table, model, validations, etc.
 1. Build webpage displaying current price using coinapi.io
 2. Build a background job (worker) checking the price hourly and email if price rises above TARGET_PRICE
 3. Refactor webpage + worker to share code in a service
