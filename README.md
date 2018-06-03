@@ -13,8 +13,8 @@
 
 # Execution Plan
 
-1.) Build webpage displaying current price using coinapi.io
-2.) Build a background job (worker) checking the price hourly and email if price rises above TARGET_PRICE
-3.) Refactor webpage + worker to share code in a service
-4.) Adjust webpage to load the price asynchronously (API call occurs after page load)
-5.) Add in total holdings value to the webpage ; Also add holdings info in the email
+1. Build webpage displaying current price using coinapi.io
+2. Build a background job (worker) checking the price hourly and email if price rises above TARGET_PRICE
+3. Refactor webpage + worker to share code in a service
+4. Adjust webpage to load the price asynchronously (API call occurs after page load)
+5. Add in total holdings value to the webpage ; Also add holdings info in the email
