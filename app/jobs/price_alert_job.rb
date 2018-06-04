@@ -3,15 +3,14 @@ class PriceAlertJob < ApplicationJob
  
   def perform()
     quote = RemoteQuote.get_quote
-    # Need to calculate & add in holdings_value once ENV variable is set 
-    puts quote
-    quote_record = Quote.create(symbol: quote[:asset_id_base], price: quote[:rate]*100, holdings_value: 0)
-    
-    if quote[:rate] >= 2
-      puts 'quote is greater than 2'
-      #logic for whether to send an email
+    rate = quote[:rate]*100
+    holdings = ENV.fetch('HOLDINGS').to_i*rate
+    quote_record = Quote.create(symbol: quote[:asset_id_base], price: rate, holdings_value: holdings)
+     
+    if rate >= ENV.fetch('TARGET_PRICE').to_i
+      NotifierMailer.price_alert(rate, holdings).deliver_now
     else 
-      puts 'quote is lower than 2'
+      puts "Current rate is #{rate} cents, total holdings #{holdings} cents"
     end
   end
 end
