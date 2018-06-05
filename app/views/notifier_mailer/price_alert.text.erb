@@ -1,1 +1,5 @@
-Price Alert! The value of <%= ENV.fetch('CURRENCY_SYMBOL') %> is now worth <%= @rate %> cents. Total holdings are valued at <%= @holdings %> cents. 
+Price Alert!
+
+The value of <%= ENV.fetch('CURRENCY_SYMBOL') %> is now worth $<%= add_commas(@rate/100.0) %>.
+
+Total holdings are valued at $<%= add_commas(@holdings/100.0) %>. 

@@ -8,7 +8,7 @@ class PriceAlertJob < ApplicationJob
     quote_record = Quote.create(symbol: quote[:asset_id_base], price: rate, holdings_value: holdings)
      
     if rate >= ENV.fetch('TARGET_PRICE').to_i
-      NotifierMailer.price_alert(rate, holdings).deliver_now
+      NotifierMailer.price_alert(rate, holdings).deliver!
     else 
       puts "Current rate is #{rate} cents, total holdings #{holdings} cents"
     end

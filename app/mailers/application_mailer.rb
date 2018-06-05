@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: ENV.fetch('FROM_EMAIL_ADDRESS')
+  default from: 'Crypto Price Alert <lambo@moon.com>'
   layout 'mailer'
 end

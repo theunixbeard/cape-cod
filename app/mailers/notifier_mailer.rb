@@ -1,6 +1,7 @@
 class NotifierMailer < ApplicationMailer
-  default from: ENV.fetch('FROM_EMAIL_ADDRESS')
-  
+  include QuotesHelper
+  helper :quotes
+
   def price_alert(rate, holdings)
     @rate = rate
     @holdings = holdings
