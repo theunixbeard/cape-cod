@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'httparty', '~> 0.16.2'
+gem 'redis-rails'
 gem 'sidekiq'
 gem 'sidekiq-scheduler' 
 

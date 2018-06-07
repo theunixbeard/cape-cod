@@ -22,3 +22,6 @@
 # Vim
 *.swp
 *.swo
+
+# redis
+dump.rdb
