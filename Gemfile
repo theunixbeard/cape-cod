@@ -31,6 +31,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'httparty', '~> 0.16.2'
+gem 'sidekiq'
+gem 'sidekiq-scheduler' 
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -1,0 +1,4 @@
+:schedule:
+  price_alert_job:
+    cron: '0 0 * * * *'   # Runs once per hour
+    class: PriceAlertJob
